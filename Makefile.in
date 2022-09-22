@@ -399,6 +399,7 @@ redist: dist | $(filter-out dist deploy install redist,$(MAKECMDGOALS))
 	cp $(PROTONFIXES_TARGET)/cabextract $(REDIST_DIR)/files/bin/
 	cp $(PROTONFIXES_TARGET)/libmspack.so.0 $(REDIST_DIR)/files/lib64/
 	cp $(PROTONFIXES_TARGET)/libmspack.so.0.1.0 $(REDIST_DIR)/files/lib64/
+	rm -rf $(BUILD_NAME)
 	mv $(REDIST_DIR) $(BUILD_NAME)
 	tar -cvzf $(BUILD_NAME).tar.gz $(BUILD_NAME)
 	sha512sum $(BUILD_NAME).tar.gz > $(BUILD_NAME).sha512sum

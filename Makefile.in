@@ -1730,6 +1730,7 @@ deploy: all
 redist: all
 	mkdir -p $(REDIST_DIR)
 	rsync --delete -arx $(DST_BASE)/ $(REDIST_DIR)
+	rm -rf $(BUILD_NAME)
 	mv $(REDIST_DIR) $(BUILD_NAME)
 	tar -cvzf $(BUILD_NAME).tar.gz $(BUILD_NAME)
 	sha512sum $(BUILD_NAME).tar.gz > $(BUILD_NAME).sha512sum

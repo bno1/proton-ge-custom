@@ -6,3 +6,6 @@
 /.vagrant/
 /vagrant_share/
 /contrib
+/build
+
+patchlog.txt

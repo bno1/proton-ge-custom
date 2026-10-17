@@ -2,6 +2,6 @@
 
 set -ex
 
-git reset --recurse-submodules
-git checkout --recurse-submodules .
-git submodule foreach --recursive git clean -df
+git reset
+git checkout -- .
+git submodule foreach --recursive 'git checkout -f $sha1 && git clean -df'
